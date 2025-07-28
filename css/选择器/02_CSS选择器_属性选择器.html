@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+
+    <style>
+        /**
+            属性选择器：
+               -- 用来根据元素的属性来选中元素
+               -- 语法：
+                        [属性名]{} ,选中具有该属性的元素
+                        [属性名=属性值]{} ,选中指定属性名和指定属性值的元素
+
+
+
+
+         */
+
+        /* 选中具有title属性的元素*/
+        [title]{
+            color: red;
+        }
+        /* 选中具有title属性且值为hello的元素 */
+        [title=hello]{
+            color: chartreuse;
+        }
+        /* 选中具有title属性且值为he开头的元素 */
+        [title ^=he]{
+            color: chartreuse;
+        }
+
+        /* 选中具有title属性且值为lo结尾的元素 */
+        [title $=lo]{
+            color: chartreuse;
+        }
+
+        /* 选中具有title属性且值含有a的元素 */
+        [title *=a]{
+            color: chartreuse;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+<h1 title="hello">你好</h1>
+<p title="abc_hello">我好</p>
+<p>大家好</p>
+<div>卧槽，好诗！</div>
+</body>
+</html>

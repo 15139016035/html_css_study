@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+    <!--
+     编写位置二：
+        - 内部样式表
+            -可以通过style标签来编写内部样式表
+            -降低了代码的耦合性，更加容易维护；
+            -缺点：只能在当前页面中生效，无法在不同的页面中复用；
+    -->
+    <style>
+        p{
+          color: red;
+          font-size: 40px;
+        }
+    </style>
+
+
+
+    <!--
+     编写位置三：
+        - 外部样式表：
+            - 将指定的样式编写到外部的css文件中
+              然后通过link标签引入外部的样式
+            - 优点
+             ■ 将结构和表现完全分离
+             ■ 同时css代码可以在不同的页面进行复用
+             ■ 外部文件可以利用到浏览器的缓存机制，加快用户访问速度（浏览器加载过的文件，不会再重新加载，而是从缓存中加载
+
+    -->
+    <link rel="stylesheet" href="../00_style/01_CSS编写位置.css">
+</head>
+<body>
+
+
+<!--
+编写位置一：
+ 内联样式（行内样式）：
+    - 直接将css写道元素标签的style属性中
+    - 一个网页分为三个部分
+        结构，表现，行为：一个设计优良的网页，最好是把三者分离
+-->
+
+<p style="color: red; font-size: 40px">你好</p>
+
+
+</body>
+</html>

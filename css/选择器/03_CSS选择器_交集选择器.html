@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+
+    <style>
+        /**
+            交集选择器：
+               -- 选中同时符合多个选择器要求的元素
+               -- 语法： 选择器1选择器2选择器3{}
+
+
+
+
+
+         */
+
+        /* 选中元素是div 且 属性名是title的元素
+             要同时满足 元素选择器且满足属性选择器的要求；
+        */
+        div[title]{
+            color: red;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+<h1 title="hello">你好</h1>
+<p title="abc_hello">我好</p>
+<p>大家好</p>
+<div title="abc_hello">卧槽，好诗！</div>
+</body>
+</html>

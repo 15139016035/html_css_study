@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+
+    <style>
+        /**
+            关系选择器：
+               -- 根据元素之间的关系来选中元素
+                       -- 父子，祖先，后代，兄弟
+               -- 子元素选择器：
+                  作用：选中指定元素的子元素 （只能通过父元素选择到子元素）
+                  语法： 父元素 > 子元素 {}
+
+               -- 后代元素选择器  （只能通过祖先元素选择到后代元素）
+                  作用：选中指定元素的后代元素
+                  语法：祖先 后代{}
+
+              -- 兄弟元素选择器
+                 作用：选中指定兄元素的弟元素 （只能通过哥哥找弟弟）
+                 语法：
+                     兄 + 弟 {}   （+ 选中兄元素紧随其后的第一个兄弟元素)
+                     兄 ~ 弟 {}   （~ 选中兄元素后面的所有兄弟元素)
+         */
+
+        /*子元素选择器：选中div中的span，字体设置为30px 字体设置为红色*/
+        div > span {
+            color: red;
+            font-size: 30px;
+        }
+
+        /*子元素选择器：选中box1中的span，字体设置为30px 字体设置为红色
+         用了子元素选择器， 类选择器，交集选择器；
+        */
+        div.box1 > span {
+            color: red;
+            font-size: 30px;
+        }
+
+
+        /*后代元素选择器： 选中.box1 的所有后代元素span*/
+        .box1 span {
+            color: red;
+        }
+
+        /*兄弟选择器 ：使用+号*/
+        div + span  {
+            color: red;
+        }
+
+        /*兄弟选择器 ：使用 + */
+        div + span  {
+            color: red;
+        }
+
+        div ~ span  {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <span>今天天气真不错</span>
+</div>
+
+<h1 title="hello">你好</h1>
+<p id="p1">我好</p>
+<p class="p2">大家好</p>
+<div title="abc_hello">卧槽，好诗！</div>
+
+<span>明天天气也不错</span>
+<span>那我出去玩</span>
+
+<div class="box1">
+    <span>后天天气怎么样？</span>
+    <p>
+        <span>我猜测后天天气应该会下雨！！！</span>
+    </p>
+</div>
+
+
+</body>
+</html>
