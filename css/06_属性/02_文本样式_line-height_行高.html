@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>text-align</title>
+
+
+    <style>
+
+        /**
+           -- line-height 设置元素额的行高
+                  行就是用来放文字的，行高就是文字所在行的高度；
+                  文字默认是在行高中垂直居中的；
+                  由于文字是沿着基线对齐，所以并不是完全居中；但是看起来差不多居中了；
+               作用：
+                    1. 水平居中 ，行高和容器高度一致
+                    2. 设置行间距， 行间距怎么算？  第一行的文字下面的空白+ 第二行文字上面的空白 ；
+                        其实算下来就是  行高text-line 减去 font-szie文字大小 =行间距
+         */
+
+        /*现在的行间距30px*/
+        .p0{
+            border: 2px red solid;
+            font-size: 40px;
+            line-height: 70px;
+
+        }
+
+
+
+        /*想让文字在div中居中，其实就是将行高设置的和div高度一致*/
+        div{
+            border: 2px red solid;
+            height: 500px;
+            width: 500px;
+        }
+        .p1{
+            text-align: center; /*水平居中*/
+            line-height: 500px; /*垂直居中*/
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<p class="p0">落魄谷中寒风吹，春秋蝉鸣少年归。
+    荡魂山处石人泪，定仙游走魔向北
+</p>
+
+<div class="div">
+    <p class="p1">hello</p>
+</div>
+
+
+</body>
+</html>

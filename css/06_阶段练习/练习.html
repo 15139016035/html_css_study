@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+
+
+    <style>
+
+        /*清除元素的默认样式，卸妆*/
+       *{
+            margin: 0;
+            padding: 0;
+        }
+
+       ul{
+           list-style: none;
+       }
+
+       img{
+           /*设置不要基线对齐*/
+            vertical-align: top;
+       }
+
+       body {
+           background: black;
+       }
+
+        /*开始化妆*/
+        ul{
+            width: 190px;
+            height: 470px;
+            background: #fff;
+
+        }
+
+        img{
+            /*设置宽度，高度自适应*/
+            width: 190px;
+        }
+
+        /*给每个元素设置一个下的内边距， 最后一个不设置*/
+
+        ul > li {
+            margin-bottom: 10px;
+        }
+
+
+
+div{
+    background: red;
+    width: 100px;
+    height: 100px;
+}
+
+    </style>
+</head>
+<body>
+
+<ul>
+    <li><a href="#"><img alt="照片" src="./image/3a61a76506df041f.png.avif"></a></li>
+    <li><a href="#"><img alt="照片" src="./image/1647321b4df45466.png.avif"></a></li>
+    <li><a href="#"><img alt="照片" src="./image/6267188f053b13f9.png.avif"></a></li>
+
+</ul>
+<div></div>
+<!--<div>-->
+<!--    <a><img src="./image/3a61a76506df041f.png.avif"></a>-->
+<!--    <a><img src="./image/1647321b4df45466.png.avif"></a>-->
+<!--    <a><img src="./image/6267188f053b13f9.png.avif"></a>-->
+<!--</div>-->
+</body>
+</html>

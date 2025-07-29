@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+    <style>
+        /**
+         关于一个文本经常用到的东西， 就是不希望自动换行，且字多的时候显示....
+         第一步：禁止文字换行 white-space: nowrap;
+         第二步：禁止溢出 overflow: hidden;
+         第三步： 如何处理溢出的内容 text-overflow: ellipsis;
+      */
+
+        .p1{
+            display: block;
+            background: green;
+            width: 80px;
+
+            /* 禁止文字换行*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<p class="p1">今天天气真不错</p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        /**
+           一些前置知识：
+               * 在浏览器的设计中，每个文字被渲染显示出阿来都会有一个文本框对应(一个文字认为就是一个box)
+               * 且每一行都有一个行框，就是我们的line-height 行高；
+               * 当我门设置font-size时，实际上就是设置这个文本框的大小
+               * 且文本框中都有一个特殊的位置叫做基线(baseline)
+               * 文字的垂直对齐默认都是和基线对齐的
+
+            vertical-align
+               -设置元素垂直对其的方式
+               -可选值：
+                 * baseline ：默认值 子元素和父元素基线对齐
+                 * top 子元素文本框顶部和父元素文本框顶部对齐
+                 * bottom 子元素文本框的底部和父元素文本框的底部对齐
+                 * middle 将元素的中线和父元素基线高度+x高度一半的位置对齐（差不多就是元素中线和x的中线对齐）
+               - 在实际开发中 vertical-align最常用的就是消除图片下面的空白，那个空白就是基线对齐引起的；
+         */
+
+        p{
+            border: orange 1px solid;
+            font-size: 40px
+        }
+        span {
+            border: red 1px solid;
+            font-size: 30px;
+            vertical-align: baseline;
+        }
+    </style>
+</head>
+<body>
+
+<p>In Luo Po Valley, where the <span>c</span>old winds sweep。</p>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        /**
+             --  font-family 想要生效主要还取决于用户电脑有没有装这个字体 ；
+                  我们公司有设计师，设计了一个独特的字体，所有用户都没有装这个字体；
+             -- font-face
+                   - 通过它就可以将远程字体提供给用户使用
+                   - 使用要慎重：
+                         *第一：下载字体需要花费时间，字体文件太大会下载慢，影响用户体验
+                         *第二：可能涉及到版权问题；
+         */
+
+        /* @符号就是设置的意思 */
+        @font-face {
+            /*src 是服务器中字体的路径*/
+            src: url("../JetBrainsMonoNerdFont-Bold.ttf");
+            /*这个font-family和下面的那个不一样，这个就是给我们设置的字体起个名字*/
+            font-family: 'my-font';
+
+        }
+
+        p {
+            font-size: 30px;
+            font-family: my-font;
+        }
+    </style>
+</head>
+<body>
+<p>落魄谷中寒风吹，春秋蝉鸣少年归。 荡魂山处石人泪，定仙游走魔向北。 逆流河上万仙退，爱情不敌坚持泪。
+    宿命天成命中败，仙尊悔而我不悔</p>
+
+</body>
+</html>
