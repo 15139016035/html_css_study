@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Document</title>
+
+    <style>
+
+        /**
+        --长度单位 ：
+               -像素（px）；
+                - 是一个绝对的单位，精确的控制长度尺寸；
+                - 显示器实际上由一个一个的小方格组成，这一个个的方格就是像素
+                - 1920*1080 ：就是垂直1920和水平1080个方格； 越清晰的屏幕像素越小；
+                - 在一个屏幕上 10个像素能有指甲盖那么大，到了一个更加清晰的像素，变成了米粒大小；
+                  就比如当我们面向移动端开发时，同样12px在pc可能很合适，在手机端就变得特别的小；
+
+               -百分比（%）
+                - 是一个相对的长度单位，相对值是对其父元素的值来计算的；
+                - 50%，就代表父元素的50%就是当前元素的长度值；
+                - 一个常见的“陷阱”是，padding 和 margin 的百分比值无论是水平方向还是垂直方向，都是相对于父元素的 宽度 来计算的。
+                - 这个参照物 我们上面叙述的都是父元素，这是通常情况，最好去MDN查文档；具体的参照物是谁；
+
+              -em
+                -  是一个相对单位，它的具体大小是根据其应用元素的字体大小（font-size）来计算的；
+                -  当前元素设置font-size的值就是 1em的值；
+                -  当前元素未设置font-size的话，会继承父元素的font-zise；
+
+              -rem  （root em）
+                - 只针对html根元素的font-size；
+         */
+        .box1{
+            width: 100px;
+            height: 100px;
+        }
+
+
+        .box1{
+            width: 50%;
+            height:  50%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box1">
+    <div class="box2"></div>
+
+</div>
+
+</body>
+</html>

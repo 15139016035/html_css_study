@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+<style>
+
+    /**
+      外边距： 更加复杂；
+            同样外边距有四个方向：
+                margin-top , 上外边距值越大，元素越靠下
+                margin-right ,
+                margin-bottom ,
+                margin-left; 左外边距越大，元素越靠右
+         -- 影响元素位置：
+                由于我们的浏览器默认是按照 自左向右，自上向下的顺序排列元素的；（除了特殊地区不考虑）
+                所以当我们设置上和左的时候，改变的元素自身的位置；
+                    当我们设置下和右的时候，改变的其他元素的位置；
+
+                margin可以设置负值； 也是一样 设置上左的时候自身移动， 设置右下的时候改变其他元素位置；
+
+         -- 外边距折叠：
+                -垂直方向，相邻的外边距会发生折叠现象，
+                   兄弟元素的话，两个元素相邻的外边距合二为一，取较大值；（影响不大）（如box1和box2）
+                   父子元素的话，元素的外边距会传递给父元素，会导致布局出问题需要避免 （如box4和box5）
+                     *解决方案（box4和box5）：针对 相邻，外边距这两个点去解决；
+                        * 用内边距；；
+                        * 不让它相邻，给父加个border
+
+         -- 水平居中
+                    auto :
+                      - 水平方向
+                          margin的值可以设置为auto，元素的外边距由浏览器自动计算；(box6和box7)
+                          将margin-left 设置为auto，浏览器会让margin-lef贪婪的占据所有可用的水平空间，就会让元素跑到最右边
+                          将margin-right 设置为auto，浏览器会让margin-right贪婪的占据所有可用的水平空间，就会让元素跑到左边
+                          这种原因归结于一个方程：
+                            容器宽度=margin-left + border-left-width+ padding-left+width +padding-right +border-right-width+margin-right
+                            当水平方向只有一个margin是auto时，为了满足这个等式，将所有剩余空间都赋予给auto的外边距
+
+                          margin: 0 auto; 最经典的应用场景。当 margin-left 和 margin-right 同时被设置为 auto 时，浏览器会遵循一个特殊的规则：平均分配剩余的水平空间
+                           * 元素必须有明确的宽度，浏览器会首先确认这一点
+                           * 然后减去元素自身的宽度，内边距，边框，剩下就是可用的水平空间
+                           * 应为margin-left和margin-right都是 auto，浏览器会将剩余空间评分给他们
+                           * 故此实现了元素在其父元素内水平居中的效果
+
+                      - 垂直方向
+                          根据 W3C 的 CSS 规范，在常规的文档流（Normal Flow）中，如果块级元素的 margin-top 或 margin-bottom 被设置为 auto，那么它们的计算值（used value）就是 0；
+                          但是在绝对定位元素，FlexBox 和Grid布局中 这个规则失效：
+
+
+     */
+    .box1{
+        width: 100px;
+        height: 100px;
+        background: blue;
+        margin-bottom: 100px;
+    }
+
+    .box2{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 100px;
+    }
+
+
+    .box4{
+        width: 300px;
+        height: 300px;
+        background: blue;
+
+
+
+    }
+
+    .box5{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 50px;
+
+    }
+
+    .box6{
+        width: 800px;
+        height: 300px;
+        border: red solid 5px;
+
+
+
+    }
+
+    .box7{
+        width: 60%;
+        height: 100px;
+        background: green;
+        margin: 0 auto;
+    }
+
+</style>
+
+</head>
+<body>
+<div class="box4">
+    <div class="box5"></div>
+</div>
+<hr>
+<div class="box6">
+    <div class="box7"></div>
+</div>
+
+<hr>
+<div class="box1"></div>
+<div class="box2"></div>
+
+</body>
+</html>

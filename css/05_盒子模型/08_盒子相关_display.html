@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>display</title>
+
+
+    <style>
+        /**
+       --display 设置元素的类型
+            可选值：
+              * inline 设置元素为行内元素
+              * block 设置元素为块元素
+              * inline-block 设置为行内块元素
+                    -行内块元素，间距行内元素和块元素的特点
+                    -不独占一行，又可以设置宽高；
+                    -注意：行内块的特点和文本很像，布局时尽量少用；
+                          第一个文本的字与字之间有空白的间隙，
+                          第二个就是文本的那个基线，
+                          导致用起来很麻烦；
+              * none 隐藏元素
+
+       --visibility 设置元素是否可见
+            可选值：
+               * visible 默认值，可见元素
+               * hidden 元素隐藏在页面不可见，但是依然占据页面位置；
+
+
+      display的隐藏和visibility的隐藏是不一样的
+         */
+        .span1{
+            width: 200px;
+            height:200px;
+            background: red;
+            display: inline;
+        }
+
+        .span2{
+            width: 200px;
+            height:200px;
+            background: red;
+            display: inline;
+        }
+
+
+        /*使用display隐藏元素*/
+        span:nth-child(2){
+            display: none;
+        }
+
+        /* +是兄弟选择器
+           当鼠标移入第一个span时，让他的下一个兄弟变为行内块；
+        */
+        span:first-child:hover + span{
+            display: inline-block;
+        }
+
+        /* 使用visibility 隐藏元素*/
+        span:nth-child(3){
+            visibility : hidden;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<span class="span1">我是一个span</span>
+<span class="span2">我是二个span</span>
+
+<span>我是三个span</span>
+<span>我是四个span</span>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        /**
+          内边距（Padding）：包围在内容区域之外的，表示内容和边框之间的距离 ，是透明区的；
+                共有四个方向的内边距：padding-top,padding-right,padding-bottom,padding-left
+                padding:30px 是一个简写属性
+                padding:10px 20px 30px 40px ;也是上右下左；
+                padding:10px 20px 30px ; 是 上，左右，下
+                padding:10px 20px ; 是上下，左右；
+
+                默认情况下，背景颜色会延伸到内边距上，所以无法直观的看到内边距；
+                用了下面的案例来展示padding
+
+
+         */
+
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /*padding-top: 30px;*/
+            /*padding-right: 30px;*/
+            /*padding-bottom: 30px;*/
+            /*padding-left: 30px;*/
+            padding: 30px;
+        }
+
+        .inner{
+
+            width: 100%;
+            height: 100%;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box1">
+    <div class="inner"></div>
+</div>
+
+</body>
+</html>

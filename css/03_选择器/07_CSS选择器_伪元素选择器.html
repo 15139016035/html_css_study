@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+
+    <style>
+      /**
+        --伪元素
+          -在一个已经存在的元素的基础上创建并选中一个不存在于文档树中的新元素（虚拟元素），并为其添加样式；
+          -是通过CSS添加的，不算是网页的正是内容，爬虫是无法爬到的；
+          - 使用::双冒号表示；
+
+          ::before 在元素内容的前面创建一个伪元素
+          ::after  在元素内容的后面创建一个伪元素。
+       */
+      /*选中div标签的开始，创建一个伪元素并选中，添加内容hello，并设置样式颜色为绿色*/
+      div:before{
+          content: "hello,";
+          color: green;
+      }
+    </style>
+</head>
+<body>
+<div>我是一个div</div>
+</body>
+</html>
