@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <link href="../图标字体/css/all.css" rel="stylesheet"/>
-
+    <link href="../图标字体/ali_icon/iconfont.css" rel="stylesheet"/>
     <style>
           /**
             ● 我们经常在网页中看到一些小图标，可以使用 图片表示这些图标
@@ -25,12 +25,30 @@
                     * 只要两个文件夹 css 和webfonts 到项目中
                     *  引入css中的all.css
                     *  (从官网icons中挑选 然后复制标签到项目中直接使用)
+
+
+             -- 阿里的图标字体使用步骤 https://www.iconfont.cn/
+                 * 登录注册 
+                 * 选择图标到购物车
+                 * 添加到项目
+                 * 进入项目带年纪下载至本地，会有一个压缩包 
+                 * 解压  iconfont.woff2， iconfont.ttf ，iconfont.woff  ，iconfont.woff2 。4个文件粘贴到项目
+                 * 引入css文件
+                 * 使用 class的使用方式第一个class必须是 iconfont，第二个是图标复制出来的class
+                 * 还有使用unicode的方式,如下案例
            */
 
+          .iconfont{
+              font-size: 50px;
+          }
     </style>
 </head>
 <body>
      <i class="fa-chisel fa-regular fa-house"></i>
+     <!--class的方式 使用阿里的字体-->
+     <i class="iconfont icon-a-namefenxiangfangxiangnullzhuangtainullxingzhuangDefaultyanseheiweizhiDe"></i>
+     <!--unicode的方式使用-->
+     <i class="iconfont ">&#xe604;</i>
 </body>
 </html>
 
