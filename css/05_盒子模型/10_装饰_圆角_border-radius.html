@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子相关样式</title>
+
+    <style>
+            /* *
+            -- 盒子相关的样式
+                  - border-radius :可以同时指定盒子的四个角的圆角半径；
+                        *  也可以单独指定每个角的,如下案例
+                        *   搜索 "使用方式"，查看三种使用方式
+            
+            */
+
+
+        
+
+        /* outline 常见用法，就是 鼠标悬浮时添加个样式比如为绕一圈的阴影 */
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color:rgb(0, 255, 179);
+        }
+        .box3:hover{
+           
+            outline: 10px red solid;
+/* 使用方式一： */
+            /* 左上角的圆角半径，数值越大角越远 */
+            border-top-left-radius: 50px ;
+            /* 右上角的圆角半径 */
+            border-top-right-radius: 50px ;
+            /* 右下的圆角半径 */
+            border-bottom-right-radius: 50px ;
+            /* 左下的圆角半径 */
+            border-bottom-left-radius: 50px ;
+
+/* 使用方式二： */
+            /* 同时指定四个角圆角半径 */
+            border-radius: 100px;
+
+/* 使用方式三： */
+            /*左上 ，右上 ，右下 ，左下 的顺序， 这里最后一个设置覆盖了上面的设置所以只有这个生效了 */
+            border-radius: 10px 20px 30px 40px ;
+
+
+        }
+    </style>
+</head>
+
+<body>
+ 
+    <div class="box3"></div>
+</body>
+
+</html>
