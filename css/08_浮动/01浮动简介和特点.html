@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 
+              *** 浮动 ：就是我们的一种布局手段；
+                        --- 通过浮动可以使元素脱离文档流从而能够横向排列；
+
+              *** float ：通过该属性设置元素浮动
+                    -可选值：
+                       * none ：默认值，元素不浮动
+                       * left ：元素向包含块的左浮动；
+                       * right： 元素向包含块的右浮动
+
+
+*** 浮动的特点：
+        - 设置浮动后，元素脱离文档流，不再占用文档流的那个位置；后面的文档流元素会补上；
+        - 设置浮动的元素，元素会向其包含块的左侧或者右侧移动
+        - 设置浮动的元素，再怎么飘不会超过包含块；
+        - 一行无法容纳所有的浮动元素就会换行；
+        - 浮动元素不会超过它上边浮动的兄弟元素，最多和兄弟元素再一个水平线；
+        - 浮动元素不会盖住文字，文字会环绕再浮动元素周围；
+
+        
+       */
+
+       .box1{
+        width: 500px;
+        height: 100px;
+        background-color: red;
+
+        float: left;
+
+       }
+       .box2{
+        width: 500px;
+        height: 100px;
+        background-color: blue;
+        float: left;
+       }
+       .box3{
+        width: 50px;
+        height: 100px;
+        background-color: rgb(0, 255, 68);
+        float: right;
+
+       }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+
+<div class="box2"></div>
+<div class="box3"></div>
+
+    
+</body>
+</html>
