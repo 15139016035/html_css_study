@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习一</title>
+
+
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+       
+        }
+
+       
+
+        .nav{
+            width: 900px;
+            height: 40px;
+            background-color: #333;
+            margin: 100px auto;
+            line-height: 40px;
+        }
+
+        /* 菜单 */
+        .nav li {
+            float: left;
+            width: 150px;
+            text-align: center;
+        
+        }
+
+
+        .nav li:hover{
+            background-color: #706f6f;
+        }
+
+
+        /* 设置超链接 */
+        .nav a{
+            display: block; /*让a充满父元素，充满li， 还有行内元素会基线对齐*/
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <!--
+    导航条
+
+    -->
+
+    <ul class="nav">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">财经</a></li>
+        <li><a href="#">娱乐</a></li>
+        <li><a href="#">美食</a></li>
+        <li><a href="#">美妆</a></li>
+    </ul>
+
+
+    
+</body>
+</html>

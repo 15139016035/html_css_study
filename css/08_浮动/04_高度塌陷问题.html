@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        /* 
+            ---- 在文档流中的元素，子元素会将父元素撑开；
+                 如：box1 和box2;
+
+            ---- 当元素浮动脱离文档流后，无法撑开父元素，会导致父元素塌陷；
+                  父元素的高度塌陷，后面的元素就会跟上，导致布局混乱
+                  如：box3 和 box4 和 box5
+
+            ---- 所以在浮动布局中，高度塌陷必须处理；
+
+            ---- 如何解决：
+                    -- 指定父元素的高度, 但是会导致高度不灵活，因为写死了；
+            ---- 解决方案：
+                    -- BFC ：(Block formatting context) 块级格式化环境
+                       可以将BFC理解为一个隐藏的属性，当开启BFC后的元素具备如下特征：
+                            1. 元素开启BFC后，子元素的垂直外边距不会传递给父元素，解决外边距折叠问题
+                            2. 元素开启BFC后，元素不会被浮动元素所覆盖
+                            3. 元素开启BFC后，元素可以包含浮动的子元素：
+            ---- 如何开启BFC：
+                    -- 需要间接的方式开启BFC，而不是直接就开了
+                       因为BFC是间接开启的，所以都会有一些副作用,而我们要做的就是可以开启BFC且副作用最小的
+                            1. 浮动会开启元素的BFC； 
+                                    （Box6包裹不住浮动的Box7，box6开启浮动， 但是副作用就是box6也脱离文档流，导致Box8被挡住了,副作用最大）
+                            2. overflow ;也会开启BFC；
+                                    （overflow 的值设置为hidden，副作用比较小）
+                            3. display: flow-root ,也会开启BFC *****最推荐
+                                     （他的作用就是给元素开启BFC,副作用几乎没有）        
+
+
+        
+        */
+
+
+        /* box1 和 box2 */
+        /* 
+        .box1 {
+     
+            border: 10px red solid;
+
+        }
+
+        .box2 {
+         
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        } 
+        */
+
+       /* box3 和 box4 和 box5 */
+        /*
+        .box3 {
+            border: 10px red solid;
+
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+
+        .box5{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(179, 170, 255);
+        } */
+
+
+
+             
+        .box6 {
+            border: 10px red solid;
+            display: flow-root;
+
+        }
+
+        .box7 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+
+        .box8{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(179, 170, 255);
+            
+        } 
+
+    </style>
+
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+ <hr/>
+
+      <div class="box3">
+        <div class="box4"></div>
+    </div>
+    <div class="box5">
+        
+    </div> 
+
+
+    <hr/>
+    <div class="box6">
+        <div class="box7"></div>
+    </div>
+    <div class="box8"></div>
+</body>
+
+</html>
