@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 
+            盒子模型等式：
+               margin-left + 可见框 + margin-right =包含块的内容区宽度;
+
+            box1 开启相对定位 ，box2 开启绝对定位， box1还是box2的包含块可以 margin：0 auto；的水平居中失效了，为什么？
+               * 当元素开启绝对定位后： 两个新的等式诞生了： （因为偏移量多了四个属性）
+                    - left + margin-lef +可见框宽度 + margin-right + right =包含块内容去区域宽度； （水平的等式）
+                    - top + margin-top +可见框高度 +margin-bottom + bottom =包含块内容的高度；  （垂直的等式）;
+               *  详细解释见： 垂直布局等式（绝对定位） 和水平布局的等式（绝对定位） 
+               *简单解释 ：
+                    想要水平居中 水平等式中必须，仅有margin-left 和margin-right 为auto； 让浏览器把剩余的值分配给他俩 ，实现居中；
+                    想要垂直居中 垂直等式中必须，仅有margin-top 和margin-bottom 为auto； 让浏览器把剩余的值分配给他俩 ，实现居中；
+                但是  left， right，top，bottom 四个值的默认值也是auto，且这个auto可不会像margin那样，会让浏览器给他们分配，他们的auto会有一个动态的值，就是让当前元素保持当前位置不变的值；
+                那么就让这四个值，都为0，那么此时margin为auto，浏览器为了等式成立，就又会把剩余的值分配给margin，再次实现居中；l
+        */
+        .box1{
+            width: 500px;
+            height: 500px;
+            border: 5px solid red;
+            position: relative;
+        }
+          .box2{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    
+</body>
+</html>

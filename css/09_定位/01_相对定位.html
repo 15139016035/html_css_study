@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            ---- 相对定位
+                - positon  ：设置元素的定位方式
+                    - 可选值：
+                            * static 没有开启定位
+                            * relative 开启元素的相对定位（本节演示这个）
+                            * absolute 开启元素的绝对定位
+                            * fixed    开启元素的固定定位
+                            * sticky   开启元素的粘滞定位
+                
+                - 相对定位的特点
+                    * 开启相对定位后， 不设置元素的偏移量，元素没有任何变化
+                    * 开启相对定位后， 不会使元素脱离文档流；
+                    * 开启定位的元素， 都可以使用偏移量来设置元素的位置
+                
+                - 偏移量有四个
+                    * top ：元素的上边沿距离其原始位置的上边沿有多远。
+                            -- 设置一个正值（如 top: 20px;）会使元素向下移动 20px。可以理解为“把它的顶部往下推20像素”。
+                    * bottom ： 元素的下边沿距离其原始位置的下边沿有多远。
+                            -- 设置一个正值（如 bottom: 20px;）会使元素向上移动 20px。可以理解为“把它的底部往上推20像素”。
+                    * left ： 元素的左边沿距离其原始位置的左边沿有多远。
+                            -- 设置一个正值（如 left: 20px;）会使元素向右移动 20px。可以理解为“把它的左边往右推20像素”。
+                    * right ：元素的右边沿距离其原始位置的右边沿有多远。
+                            -- 设置一个正值（如 right: 20px;）会使元素向左移动 20px。可以理解为“把它的右边往左推20像素”。
+        */
+
+        .box1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(25, 0, 255);
+            position: relative;
+            left:100px;
+            bottom:100px;
+            
+
+        }
+        .box3{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(55, 255, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    
+</body>
+</html>

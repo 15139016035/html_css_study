@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+        --- 固定定位： fixed
+                 * 特点和绝对定位大部分都相同；脱离文档流，不设置偏移量元素位置不变；
+                 * 不同点，固定定位，总是参照与浏览器的窗口进行定位，类似于在我显示器屏幕上订上了一个元素，不管怎么滚动页面它都不懂
+                   
+
+*/
+
+        body {
+            height: 4000px;
+        }
+
+        .box1 {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            bottom: 100px;
+            right: 100px;
+        
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="box1"></div>
+
+</body>
+
+</html>

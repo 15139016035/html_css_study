@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            ---- 相对定位
+                - positon  ：设置元素的定位方式
+                    - 可选值：
+                            * static 没有开启定位
+                            * relative 开启元素的相对定位
+                            * absolute 开启元素的绝对定位（本节演示这个）
+                            * fixed    开启元素的固定定位
+                            * sticky   开启元素的粘滞定位
+                
+                - 绝对定位的特点：
+                        * 开启绝对定位后，如果不设置偏移量，元素位置不发生变化；
+                        * 开启绝对定位后，元素会完全脱离文档流；
+                        * 脱离文档流后，没有块和行内元素的区分，元素可以设置宽高，宽高被内容撑开；
+                        * 脱离了文档流那么参照物是谁呢？
+                                -- 行为：绝对定位的元素会向上寻找其祖先元素，直到找到第一个 position 值不为 static的祖先元素。然后，它就会以这个祖先元素的**内边距（padding）**边缘作为参照物进行定位。
+                                -- “找不到祖先”的情况：如果一直找到 <html> 标签都没有找到一个已定位的祖先，那么就以浏览器的可见范围的左上角进行参照物进行定位；(算是html的父元素，叫做初始包含块)
+        
+                - “画地为牢”技巧：
+                        这是绝对定位最常见的用法：将一个父元素设置为 position: relative;，但不设置任何 top, left 等偏移量，它在页面上的位置不变。然后将其子元素设置为 position: absolute;。
+
+                - 绝对定位 有祖先元素的时候，参照祖先元素的 内边距
+                    * top 属性是相对于参照物（已定位的祖先）上内边距（top padding）的外边缘进行计算的。
+
+                    * left 属性是相对于参照物左内边距（left padding）的外边缘进行计算的。
+
+                    * bottom 属性是相对于参照物下内边距（bottom padding）的外边缘进行计算的。
+
+                    * right 属性是相对于参照物右内边距（right padding）的外边缘进行计算的。
+                                */
+
+        .box1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(25, 0, 255);
+            position: absolute;
+            
+
+        }
+        .box3{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(55, 255, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+
+ 
+    
+</body>
+</html>
