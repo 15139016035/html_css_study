@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="./font/iconfont.css" rel="stylesheet">
+    <style>
+        /**
+        样式重置
+         */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+
+        /*  最外层
+         */
+        /*1. 设置居中 ，方便调试*/
+        .banner {
+            height: 470px;
+            width: 590px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        /*2. 设置绝对定位，重叠*/
+        .banner .image-list li {
+            position: absolute;
+        }
+
+        /*3.决定让谁显示在最上面*/
+        .banner .image-list li:nth-child(1) {
+            z-index: 1;
+        }
+
+
+        /**
+          内部左右翻页的设置
+         */
+        /*
+        1.绝对定位，显示在上面
+        2.大小 背景颜色
+        3.垂直居中(要有高度才行)
+        4.微调位置 ,伪类的设置等
+        */
+        .prev-next .prev, .next {
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            line-height: 25px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            background-color: #ff253a;
+            font-size: 15px;
+            background-color: rgba(0, 0, 0, .15);
+            color: rgba(255, 255, 255, .8);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .prev-next .prev {
+            box-sizing: border-box;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding-left: 3px;
+        }
+
+        .prev-next .next {
+            box-sizing: border-box;
+            right: 0;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            padding-left: 6px;
+        }
+
+        .prev-next .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        /**
+          内部小点
+         */
+        /*1. ul设置绝对定位*/
+        .point ul {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            z-index: 999;
+
+        }
+
+
+        /*2. 设置小点样式*/
+        .point ul li {
+            float: left;
+            box-sizing: border-box;
+            background-color: red;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            margin-left: 8px;
+            background-color: rgba(255,255,255,.4);
+            border: 1px solid rgba(0,0,0,.05);
+        }
+
+
+        /*3.设置鼠标悬浮的效果*/
+        .point ul li:hover,
+        .point ul li.active
+        {
+            outline: 3px solid rgba(255,255,255,.2);
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+
+<!--最外层-->
+<div class="banner">
+
+    <!-- 图片-->
+    <div class="image-list">
+        <ul>
+            <li><a><img alt="图片" src="./image/1.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/2.avif"/></a></li>
+            <li><a><img alt="图片" src="./image/3.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/4.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/5.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/6.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/7.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/8.jpg"/></a></li>
+        </ul>
+    </div>
+
+
+    <!--    左右翻页-->
+    <div class="prev-next">
+        <div class="iconfont icon-arrow-left-bold prev"></div>
+        <div class="iconfont icon-arrow-right-bold next"></div>
+    </div>
+
+    <div class="point">
+        <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

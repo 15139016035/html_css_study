@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset_css/reset.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <style>
+        body {
+            font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+        }
+
+        .outer {
+            min-width: 1190px;
+            border-bottom: 1px solid #ddd;
+            background-color: #e3e4e5;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /*设置菜单区域*/
+        .menu {
+            width: 1190px;
+            height: 36px;
+            line-height: 36px;
+            margin: 0 auto;
+            color: #999;
+        }
+
+        /*  设置内部的菜单左边*/
+        .menu .menu-left {
+            float: left;
+        }
+
+        .menu .menu-left .local {
+            padding: 0 7px;
+
+        }
+        .menu .menu-left .local i {
+            color: #f10215;
+            font-size: 14px;
+
+        }
+
+        /*  设置内部的菜单右边*/
+        .menu .menu-right {
+            float: right;
+        }
+
+
+        /*  菜单右边内部*/
+        .menu .menu-right li,
+        .menu .menu-right span {
+            float: left;
+        }
+
+        .menu .menu-right li{
+            padding: 0 7px;
+        }
+        .menu .menu-right li i{
+            font-size: 11px;
+        }
+        .menu .menu-right li .red{
+            color: #f10215;
+        }
+
+        .menu .menu-right ul .line{
+            height: 10px;
+            border-right: 1px  solid;
+            margin-top: 13px;
+        }
+
+        .menu .menu-right li a:hover,
+        .menu .menu-right div:hover
+        {
+            color: #f10215;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="outer">
+
+    <div class="menu">
+        <div class="menu-left">
+            <div class="local">
+                <i class="iconfont icon-map-filling"></i>
+                <span>北京</span>
+            </div>
+        </div>
+
+        <div class="menu-right">
+            <ul>
+                <li>
+                    <a href="#">你好，请登录</a>
+
+                </li>
+                <li>
+                    <a href="#">免费注册</a>
+                </li>
+
+                <li>
+                    <a class="red" href="#">免费注册</a>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <a href="#">我的订单</a>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <div>
+                        <a href="#">我的京东</a>
+                        <i class="iconfont icon-arrow-down"></i>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <div>
+                        <a class="red" href="#">企业采购</a>
+                        <i class="iconfont icon-arrow-down"></i>
+                    </div>
+
+                </li>
+                <span class="line"></span>
+                <li>
+                    <div>
+                        <span>商家服务</span>
+                        <i class="iconfont icon-arrow-down"></i>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <div>
+                        <span>网站导航</span>
+                        <i class="iconfont icon-arrow-down"></i>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <span>手机京东</span>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <span>网站无障碍</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

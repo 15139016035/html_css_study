@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="./font/iconfont.css" rel="stylesheet">
+    <style>
+
+
+        /**
+        通过一个小案例来深入理解一下绝对定位（这里解释了两个问题，是我在写这篇文档时候的问题）：
+                ● 下面的这个小案例：
+                  ○ 内容就是 一个父元素banner没有开启绝对定位，子元素ul >li  设置了一堆图片；开启的了相对定位；
+                  ○ 此时会发现，所有的图片重叠在了一起，并出现在banner的左上角
+                ● 首先明确一点 ，绝对定位元素的偏移量针对的是包含块，在这个案例中没有祖先元素是定位元素，所以包含块是初始包含块，即html标签或者说是body标签；
+                ● 第一个问题，为什么图片会重叠？
+                  ○ 绝对定位和浮动，都会脱离文档流，但是他们不一样；
+                  ○ 绝对定位，是元素从文档流完全抽离，并且对其他的绝对定位的兄弟元素，六亲不认；绝对定位的元素的位置只和它的包含块有关系
+                  ○ 浮动，是脱离了文档流，最初被设计出来是为了文字环绕，浮动脱离文档流后会考虑其他浮动兄弟元素的存在的；
+                ● 第二个问题，为什么会重叠在banner的左上角？
+                  ○ 绝对定位的元素如果没有设置任何的偏移量，它会留在“正常文档流”中本应该出现的位置；
+                    ■ 计算第一个li，ul是banner的子元素，第一个li正常的位置就是 banner的左上角；
+                    ■ 计算第二个li，因为第一个li脱离文档流不占据任何空间，浏览器会认为第二个li就是ul的第一个li，也让他出现在banner的左上角
+                    ■ 后续的li计算方式都类似于第二个li的计算方式
+         */
+
+
+
+
+        /**
+        样式重置
+         */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            text-decoration: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+
+        /*  最外层
+          1. 设置居中 ，方便调试
+         */
+        .banner {
+            border: 2px solid red;
+            height: 470px;
+            width: 590px;
+            margin: 100px auto;
+        }
+
+        /** 内部 图片
+
+         */
+        .banner .image-list li {
+            position: absolute;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+<!--最外层-->
+<div class="banner">
+
+    <!-- 图片-->
+    <div class="image-list">
+        <ul>
+            <li><a><img alt="图片" src="./image/1.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/2.avif"/></a></li>
+            <li><a><img alt="图片" src="./image/3.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/4.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/5.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/6.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/7.jpg"/></a></li>
+            <li><a><img alt="图片" src="./image/8.jpg"/></a></li>
+        </ul>
+    </div>
+
+
+
+</div>
+
+
+</body>
+</html>
